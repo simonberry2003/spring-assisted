@@ -15,8 +15,8 @@ import com.google.common.collect.Multimap;
 
 /**
  * {@link InvocationHandler} to handle calls to an assisted factory instance. Parameters marked with
- * {@link Assisted} are provided at runtime and any other paramters requires for construction are
- * obtains from the {@link ApplicationContext}
+ * {@link Assisted} are provided at runtime and any other parameters required for construction are
+ * obtained from the {@link ApplicationContext}
  */
 public class AssistedHandler implements InvocationHandler {
 
