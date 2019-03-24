@@ -39,11 +39,11 @@ public class RealPayment implements Payment {
 }
 ```
 
-Then you need to inject AssistedFactoryProvider which creates an instance of your factory.
-
-private @Inject AssistedFactoryProvider assistedFactoryProvider;
+Inject AssistedFactoryProvider which creates an instance of your factory.
 
 ```java
+private @Inject AssistedFactoryProvider assistedFactoryProvider;
+
 @Bean
 public PaymentFactory paymentFactory() {
 	return assistedFactoryProvider.provide(PaymentFactory.class, RealPayment.class);
@@ -58,7 +58,7 @@ public class CreditService {
 }
 ```
 
-Then inject your payment factory.
+Inject your factory.
 
 ```java
 @Service
@@ -66,8 +66,7 @@ public class ExampleService {
 
 	private @Inject PaymentFactory paymentFactory;
 
-	@PostConstruct
-	public void postConstruct() {
+	public void myMethod() {
 		Object payment = paymentFactory.create(new Date(0), new Date(), BigDecimal.ONE);
 		System.out.println(payment);
 	}
